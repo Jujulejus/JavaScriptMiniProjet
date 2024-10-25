@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- affichage de la page (le visuel) -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
