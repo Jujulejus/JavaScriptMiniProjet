@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Recherche d'Ingrédients</h1>
+        <h1 class="text-center">ThemealDB API</h1>
         <form id="ingredient-form" class="form-inline position-relative">
             <div class="form-group mb-2">
                 <label for="ingredient-input" class="sr-only">Ingrédient</label>
