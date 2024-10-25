@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Liste des Ingrédients</h1>
-        <select id="ingredient-list">
-            <option value="">Sélectionnez un ingrédient</option>
-        </select>
-        <div id="ingredient-image" class="ingredient-image"></div>
+    <div class="container mt-5">
+        <h1 class="text-center">Recherche recette api themealdb</h1>
+        <form id="ingredient-form" class="form-inline">
+            <div class="form-group mb-2">
+                <label for="ingredient-input" class="sr-only">Ingrédient</label>
+                <input type="text" id="ingredient-input" class="form-control" placeholder="Entrez un ingrédient" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+        </form>
+        <div id="ingredient-image" class="ingredient-image mb-3"></div>
         <div id="recipe-list" class="recipes"></div>
+
+        <div id="recipe-details" class="mt-4"></div>
     </div>
-    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
