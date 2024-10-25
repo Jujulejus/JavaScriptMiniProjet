@@ -1,3 +1,4 @@
+//Javascript pour récupérer les ingrédients, recettes et autres infos de l'API
 $(document).ready(function() {
     const ingredientImages = {
         "Chicken": "https://www.themealdb.com/images/ingredients/chicken.png",
