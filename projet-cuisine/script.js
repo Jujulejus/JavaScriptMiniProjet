@@ -1,22 +1,15 @@
 //Javascript pour récupérer les ingrédients, recettes et autres infos de l'API
 $(document).ready(function () {
-  const ingredientImages = {
-    Chicken: "https://www.themealdb.com/images/ingredients/chicken.png",
-    Beef: "https://www.themealdb.com/images/ingredients/beef.png",
-    Fish: "https://www.themealdb.com/images/ingredients/fish.png",
-    Avocado: "https://www.themealdb.com/images/ingredients/avocado.png",
-  };
-
   $("#ingredient-form").submit(function (event) {
     event.preventDefault();
-    let ingredientInput = $("#ingredient-input").val().trim();
+    let ingredientInput = $("#ingredient-input").val().trim().toLowerCase();
 
     if (ingredientInput) {
-      if (ingredientImages[ingredientInput]) {
-        $("#ingredient-image").html(
-          `<img src="${ingredientImages[ingredientInput]}" alt="${ingredientInput}">`
-        );
-      }
+      const ingredientImages = `https://www.themealdb.com/images/ingredients/${ingredientInput}.png`;
+
+      $("#ingredient-image").html(
+        `<img src="${ingredientImages}" alt="${ingredientInput}">`
+      );
 
       $.ajax({
         url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientInput}`,
