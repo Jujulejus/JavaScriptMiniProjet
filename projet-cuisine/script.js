@@ -3,17 +3,15 @@ $(document).ready(function () {
   $("#ingredient-form").submit(function (event) {
     event.preventDefault();
     let ingredientInput = $("#ingredient-input").val().trim().toLowerCase();
+    // Récupère le texte saisi en enlevant les espaces et en le convertissant en minuscules
 
     if (ingredientInput) {
       const ingredientImages = `https://www.themealdb.com/images/ingredients/${ingredientInput}.png`;
+      // Récupère l'image de l'ingrédient à l'aide du texte saisi
 
-      if (ingredientImages) {
-        $("#ingredient-image").html(
-          `<img src="${ingredientImages}" alt="${ingredientInput}">`
-        );
-      } else {
-        $("#ingredient-image").append("<div>Ingredient not found.</div>");
-      }
+      $("#ingredient-image").html(
+        `<img src="${ingredientImages}" alt="${ingredientInput} onerror="<div>Ingredient not found.</div>">`
+      );
 
       $.ajax({
         url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientInput}`,
