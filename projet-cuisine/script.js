@@ -7,9 +7,13 @@ $(document).ready(function () {
     if (ingredientInput) {
       const ingredientImages = `https://www.themealdb.com/images/ingredients/${ingredientInput}.png`;
 
-      $("#ingredient-image").html(
-        `<img src="${ingredientImages}" alt="${ingredientInput}">`
-      );
+      if (ingredientImages) {
+        $("#ingredient-image").html(
+          `<img src="${ingredientImages}" alt="${ingredientInput}">`
+        );
+      } else {
+        $("#ingredient-image").append("<div>Ingredient not found.</div>");
+      }
 
       $.ajax({
         url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientInput}`,
@@ -24,11 +28,11 @@ $(document).ready(function () {
               );
             });
           } else {
-            $("#recipe-list").append("<div>Aucune recette trouvée.</div>");
+            $("#recipe-list").append("<div>No recipe found.</div>");
           }
         },
         error: function (err) {
-          console.error("Erreur lors de la récupération des recettes", err);
+          console.error("Error retrieving recipes", err);
         },
       });
     }
@@ -65,10 +69,7 @@ $(document).ready(function () {
                 `);
       },
       error: function (err) {
-        console.error(
-          "Erreur lors de la récupération des détails de la recette",
-          err
-        );
+        console.error("Error retrieving recipes details", err);
       },
     });
   });
