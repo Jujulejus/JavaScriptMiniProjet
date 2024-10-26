@@ -10,7 +10,7 @@ $(document).ready(function () {
       // Récupère l'image de l'ingrédient à l'aide du texte saisi
 
       $("#ingredient-image").html(
-        `<img src="${ingredientImages}" alt="${ingredientInput} onerror="<div>Ingredient not found.</div>">`
+        `<img src="${ingredientImages}" alt="${ingredientInput}>`
       );
 
       $.ajax({
