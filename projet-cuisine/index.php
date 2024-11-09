@@ -14,10 +14,10 @@
         <form id="ingredient-form" class="form-inline position-relative">
             <div class="form-group mb-2">
                 <label for="ingredient-input" class="sr-only">Ingrédient</label>
-                <input type="text" id="ingredient-input" class="form-control" placeholder="Entrez un ingrédient" required autocomplete="off">
+                <input type="text" id="ingredient-input" class="form-control" placeholder="Enter an ingredient" required autocomplete="off">
                 <div id="suggestions" class="suggestions"></div>
             </div>
-            <button type="submit" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+            <button type="submit" class="btn btn-primary mb-2 ml-2">Search</button>
         </form>
         <div id="ingredient-image" class="ingredient-image mb-3"></div>
         <div id="recipe-list" class="recipes"></div>

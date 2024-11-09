@@ -1,20 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-
 h1 {
-    text-align: center;
+  text-align: center;
+}
+
+img {
+  width: 30%;
+  height: auto;
 }
 
 select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .recipes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
