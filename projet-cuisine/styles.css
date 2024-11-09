@@ -1,5 +1,19 @@
-body {
+.titlesite {
+  padding-right: 100rem;
+}
+
+.logodusite {
+  width: 10rem;
+}
+
+.realbody {
   font-family: Arial, sans-serif;
+  color: black;
+  background-color: #6f6d6d;
+}
+
+body {
+  background-color: #b4b4b4;
 }
 
 h1 {
