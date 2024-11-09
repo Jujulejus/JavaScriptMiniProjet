@@ -68,6 +68,50 @@ $(document).ready(function () {
       });
     }
   });
+  
+  $("#random-recipe").click(function () {
+    $.ajax({
+        url: "https://www.themealdb.com/api/json/v1/1/random.php",
+        method: "GET",
+        success: function (data) {
+            let meal = data.meals[0];
+            let ingredients = [];
+
+            // Récupération des ingrédients et mesures
+            for (let i = 1; i <= 20; i++) {
+                if (meal[`strIngredient${i}`]) {
+                    const ingredientName = meal[`strIngredient${i}`];
+                    const ingredientMeasure = meal[`strMeasure${i}`];
+                    const ingredientImageUrl = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
+                    ingredients.push(`
+                      <li>
+                        <img src="${ingredientImageUrl}" alt="${ingredientName}" style="width: 30px; height: 30px; margin-right: 8px;">
+                        ${ingredientName} - ${ingredientMeasure}
+                      </li>
+                    `);
+                }
+            }
+
+            // Affiche la recette aléatoire dans la section des détails
+            $("#recipe-details").html(`
+                <h2>${meal.strMeal}</h2>
+                <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="img-fluid">
+                <h4>Ingredients :</h4>
+                <ul>
+                    ${ingredients.join("")}
+                </ul>
+                <h4>Instructions :</h4>
+                <p>${meal.strInstructions}</p>
+            `);
+        },
+        error: function (err) {
+            console.error("Erreur lors de la récupération de la recette aléatoire :'( ", err);
+        },
+    });
+});
+
+
+
 
   // Affichage des détails d'une recette
   $(document).on("click", ".recipe", function () {
