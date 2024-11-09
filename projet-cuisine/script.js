@@ -105,7 +105,7 @@ $(document).ready(function () {
         `);
       },
       error: function (err) {
-        console.error("Impossible de retrouver les détails des recettes :( ", err);
+        console.error("Impossible de retrouver les détails des recettes", err);
       },
     });
   });
