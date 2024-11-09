@@ -59,6 +59,15 @@ img {
   height: auto;
 }
 
+.text-center {
+  padding: 0.5rem;
+}
+
+h4 {
+  padding: 1rem;
+  padding-left: 0;
+}
+
 select {
   width: 100%;
   padding: 10px;
