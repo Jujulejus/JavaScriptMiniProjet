@@ -10,10 +10,16 @@
 </head>
 <body>
     <header>
-        <div class="realbody">
-            <div class="LogoName">
-                <h1 class="titlesite">UltraRecipe<img class="logodusite" src="./Images/Logo/RecetteSiteLogo.png" alt="logodusite"></img></h1>
-            </div>
+        <div class="header-body">
+                <div class="logo"><img class="logo-site" src="./Images/Logo/RecetteSiteLogo.png" alt="logo-site"/></div>
+            <ul class="header-list">
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        <div>
         </header>
         <div class="container mt-5">
             <h1 class="text-center">Ultra Recipe (Recipe Search)</h1>
@@ -22,10 +28,10 @@
                 <div class="form-group mb-2">
                     <label for="ingredient-input" class="sr-only">Ingrédient</label>
                     <input type="text" id="ingredient-input" class="form-control" placeholder="Enter an ingredient" required autocomplete="off">
-                    <div id="suggestions" class="suggestions"></div>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 ml-2">Search</button>
             </form>
+            <div id="suggestions" class="suggestions"></div>
             <button id="random-recipe" class="btn btn-secondary mb-3">Random Recipes</button>
             <div id="ingredient-image" class="ingredient-image mb-3"></div>
             <div id="recipe-list" class="recipes"></div>
