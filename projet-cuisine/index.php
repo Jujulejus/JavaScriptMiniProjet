@@ -26,7 +26,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 ml-2">Search</button>
             </form>
-            <button id="random-recipe" class="btn btn-secondary mb-3">Recette Aléatoire</button>
+            <button id="random-recipe" class="btn btn-secondary mb-3">Random Recipes</button>
             <div id="ingredient-image" class="ingredient-image mb-3"></div>
             <div id="recipe-list" class="recipes"></div>
             <div id="recipe-details" class="mt-4"></div>
