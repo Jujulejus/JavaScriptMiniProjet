@@ -16,7 +16,8 @@
             </div>
         </header>
         <div class="container mt-5">
-            <h1 class="text-center">Réalisé grâce à L'API ThemealDB</h1>
+            <h1 class="text-center">Ultra Recipe (Recipe Search)</h1>
+            <h2 class="text-center">Made using ThemealDB API</h2>
             <form id="ingredient-form" class="form-inline position-relative">
                 <div class="form-group mb-2">
                     <label for="ingredient-input" class="sr-only">Ingrédient</label>
@@ -35,9 +36,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
-
-<footer>
-    <a>FIN</a>
-</footer>
 
 </html>
