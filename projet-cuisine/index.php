@@ -12,7 +12,7 @@
     <header>
         <div class="realbody">
             <div class="LogoName">
-                <h1 class="titlesite">UltraRecipe<img class="logodusite" src="./RecetteSiteLogo.png" alt="logodusite"></img></h1>
+                <h1 class="titlesite">UltraRecipe<img class="logodusite" src="./Images/Logo/RecetteSiteLogo.png" alt="logodusite"></img></h1>
             </div>
         </header>
         <div class="container mt-5">
