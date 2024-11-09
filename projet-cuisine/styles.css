@@ -22,3 +22,11 @@ select {
   flex-direction: column;
   gap: 10px;
 }
+
+.recipe {
+  cursor: pointer;
+}
+
+.suggestion-item {
+  cursor: pointer;
+}

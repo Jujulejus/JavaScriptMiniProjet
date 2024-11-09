@@ -19,21 +19,33 @@ $(document).ready(function () {
     $("#suggestions").empty();
 
     if (query.length > 1) {  // Affiche les suggestions à partir de 2 lettres
-      const matchingIngredients = allIngredients.filter(ingredient =>
-        ingredient.startsWith(query)
-      );
+        const matchingIngredients = allIngredients.filter(ingredient =>
+            ingredient.startsWith(query)
+        );
 
-      matchingIngredients.forEach(ingredient => {
-        $("#suggestions").append(`<div class="suggestion-item">${ingredient}</div>`);
-      });
+        matchingIngredients.forEach(ingredient => {
+            const ingredientImage = `https://www.themealdb.com/images/ingredients/${ingredient}.png`; // URL de l'image de l'ingrédient
+
+            // Ajout de l'image dans la suggestion
+            $("#suggestions").append(`
+                <div class="suggestion-item">
+                    <img src="${ingredientImage}" alt="${ingredient}" style="width: 30px; height: 30px; margin-right: 8px;">
+                    ${ingredient}
+                </div>
+            `);
+        });
     }
-  });
+});
 
   // Remplit le champ de saisie avec la suggestion cliquée
   $(document).on("click", ".suggestion-item", function () {
-    $("#ingredient-input").val($(this).text());
-    $("#suggestions").empty();
-  });
+    const ingredient = $(this).text().trim();
+    $("#ingredient-input").val(ingredient);  // Remplit le champ avec l'ingrédient sélectionné
+    $("#suggestions").empty();  // Vide la liste de suggestions
+    
+    // Soumet automatiquement le formulaire après la sélection
+    $("#ingredient-form").submit();
+});
 
   // Recherche et affichage des recettes
   $("#ingredient-form").submit(function (event) {
@@ -109,8 +121,6 @@ $(document).ready(function () {
         },
     });
 });
-
-
 
 
   // Affichage des détails d'une recette
