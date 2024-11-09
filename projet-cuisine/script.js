@@ -47,24 +47,27 @@ $(document).ready(function () {
 
         for (let i = 1; i <= 20; i++) {
           if (meal[`strIngredient${i}`]) {
-            ingredients.push(
-              `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-            );
+            const ingredientName = meal[`strIngredient${i}`];
+            const ingredientMeasure = meal[`strMeasure${i}`];
+            const ingredientImageUrl = `https://www.themealdb.com/images/ingredients/${ingredientName}.png`;
+            ingredients.push(`
+            <li>
+              <img src="${ingredientImageUrl}" alt="${ingredientName}" style="width: 30px; height: 30px; margin-right: 8px;">
+              ${ingredientName} - ${ingredientMeasure}
+            </li>
+            `);
           }
         }
-
-        $("#recipe-details").html(`
-                    <h2>${meal.strMeal}</h2>
-                    <img src="${meal.strMealThumb}" alt="${
-          meal.strMeal
-        }" class="img-fluid">
-                    <h4>Ingredients :</h4>
-                    <ul>
-                        ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
-                    </ul>
-                    <h4>Instructions :</h4>
-                    <p>${meal.strInstructions}</p>
-                `);
+      $("#recipe-details").html(`
+        <h2>${meal.strMeal}</h2>
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="img-fluid">
+        <h4>Ingredients :</h4>
+        <ul>
+          ${ingredients.join("")}
+        </ul>
+        <h4>Instructions :</h4>
+        <p>${meal.strInstructions}</p>
+        `);
       },
       error: function (err) {
         console.error("Error retrieving recipes details", err);
