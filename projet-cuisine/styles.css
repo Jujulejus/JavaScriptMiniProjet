@@ -63,6 +63,11 @@ img {
   padding: 0.5rem;
 }
 
+h2 {
+  margin: 1rem;
+  margin-left: 0;
+}
+
 h4 {
   padding: 1rem;
   padding-left: 0;
